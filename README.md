@@ -4,8 +4,8 @@
 - Java工具类
 ***
 # 面试通关
-- [java基础面试通关](\\docs\\Java面试通关\\Java基础面试通关.md)
-- [IO流面试通关](docs\\Java面试通关\\面试通关[IO流].md)
+- [java基础面试通关](docs/Java面试通关/Java基础面试通关.md)
+- [IO流面试通关](docs/Java面试通关/面试通关[IO流].md)
 - [JVM面试通关](docs\\Java面试通关\\面试通关[JVM].md)
 - [线程面试通关](docs\\Java面试通关\\面试通关[线程].md)
 - [集合面试通关](docs\\Java面试通关\\面试通关[集合].md)
