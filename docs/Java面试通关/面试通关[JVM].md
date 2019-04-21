@@ -1,6 +1,5 @@
 # JVM类的加载机制
 
-
 # 触发JVM进行Full GC的情况及应对策略
 - 堆内存划分为新生代[Eden]、老年代[Survivor] 和 永久代[Tenured/Old]（1.8中无永久代，使用metaspace实现）三块区域，如下图所示：
 

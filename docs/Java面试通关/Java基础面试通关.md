@@ -34,8 +34,8 @@ System.out.println(t); // 0.20000005
 ```java
 int i = 1;
 i = i++;  // i=1
-int j = i++;  // j=1
-int k = i + ++i * i++;
+int j = i++;  // i=2  j=1
+int k = i + ++i * i++;   // i=4  j=1  k=11
 System.out.println("i=" + i); // i=4;
 System.out.println("j=" + j); // j=1
 System.out.println("k=" + k); // k=11

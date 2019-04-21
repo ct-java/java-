@@ -1,4 +1,5 @@
-#### 1. servlet单例多线程模式的理解
+# Servlet面试
+## 1. servlet单例多线程模式的理解
 - 如果不同的2个用户同时对这个网站的不同业务同时发出请求，比如注册和登陆，那么容器里有几个servlet呢？
 一个web容器，可以有多个servlet。对提交到同一个servlet类的多个业务请求，共享一个servlet对象。（也就是这个servlet类只被实例化一次）
 - 不同的用户同时对同一个业务（如注册），发出请求，那么这个时候容器了产生的是有几个servlet实例呢？
@@ -48,7 +49,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
     }
 }
 ```
-#### servlet存在多线程问题
+## servlet存在多线程问题
 - 实例变量是在堆中分配的,并被属于该实例的所有线程共享，所以不是线程安全的.
 - JSP中用到的OUT,REQUEST,RESPONSE,SESSION,CONFIG,PAGE,PAGECONXT是线程安全的,APPLICATION在整个系统内被使用,所以不是线程安全的.
 - 局部变量在堆栈中分配,因为每个线程都有它自己的堆栈空间,所以是线程安全的
@@ -58,14 +59,14 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 > 1. 采用synchronized同步。缺点就是存在堵塞问题
 > 2. 使用ThreadLocal(实际上就是一个HashMap),这样不同的线程维护自己的对象，线程之间相互不干扰
 
-#### Servlet生命周期
+## Servlet生命周期
 |  ---   |      ---       |                  ---                  |
 |:------:|:--------------:|:-------------------------------------:|
 | 初始化 | 调用init()方法 |          servlet一加载就执行          |
 |  服务  | 调用service()  | 根据具体请求调用doGet()或doPost()方法 |
 |  销毁  | 调用destory()  |           servle推出时执行            |
 
-#### jsp九大内置对象和四大作用域及servlet对应关系
+## jsp九大内置对象和四大作用域及servlet对应关系
 |         ---         |         ---         |                     ---                     |
 |:-------------------:|:-------------------:|:-------------------------------------------:|
 | servlet九大内置对象 | servlet对应内置对象 |                    说明                     |
@@ -79,7 +80,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 |        page         |        this         |                                             |
 |      exception      |      Throwable      |            只会出现于JSP错误页面            |
 
-#### jsp四大作用域[小——>大]
+## jsp四大作用域[小——>大]
 |     ---     |        ---         |                                   ---                                   |
 |:-----------:|:------------------:|:-----------------------------------------------------------------------:|
 | pageContext |    pageContext     |                               一个JSP页面                               |
@@ -87,14 +88,14 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 |   Session   |    HttpSession     | 当用户首次访问时，产生一个新的会话;会话超时，或者服务器端强制使会话失效 |
 | application |   ServletContext   |            全局作用范围，整个应用程序共享;应用程序启动到停止            |
 
-#### 自动刷新
+## 自动刷新
 Response.setHeader("Refresh","5;URL=http://localhost:8080/servlet/example.htm");
 
-#### jsp动态包含和静态包含
+## jsp动态包含和静态包含
 - 静态包含： <%@ include file="文件相对 url 地址" %>
 - 动态包含： <jsp:include page="相对 URL 地址" flush="true" />
 
-#### Cookie和Session的区别
+## Cookie和Session的区别
 1. 由于HTTP协议是无状态的协议，所以服务端需要记录用户的状态时，就需要用某种机制来识别具体的用户，这个机制就是Session.典型的场景比如购物车，当你点击下单按钮时，由于HTTP协议无状态，所以并不知道是哪个用户操作的，所以服务端要为特定的用户创建了特定的Session，用用于标识这个用户，并且跟踪用户，这样才知道购物车里面有几本书。这个Session是保存在服务端的，有一个唯一标识。在服务端保存Session的方法很多，内存、数据库、文件都有。集群的时候也要考虑Session的转移，在大型的网站，一般会有专门的Session服务器集群，用来保存用户会话，这个时候 Session 信息都是放在内存的，使用一些缓存服务比如Memcached之类的来放 Session。
 2. 思考一下服务端如何识别特定的客户？这个时候Cookie就登场了。每次HTTP请求的时候，客户端都会发送相应的Cookie信息到服务端。实际上大多数的应用都是用 Cookie 来实现Session跟踪的，第一次创建Session的时候，服务端会在HTTP协议中告诉客户端，需要在 Cookie 里面记录一个Session ID，以后每次请求把这个会话ID发送到服务器，我就知道你是谁了。有人问，如果客户端的浏览器禁用了 Cookie 怎么办？一般这种情况下，会使用一种叫做URL重写的技术来进行会话跟踪，即每次HTTP交互，URL后面都会被附加上一个诸如 sid=xxxxx 这样的参数，服务端据此来识别用户。
 3. Cookie其实还可以用在一些方便用户的场景下，设想你某次登陆过一个网站，下次登录的时候不想再次输入账号了，怎么办？这个信息可以写到Cookie里面，访问网站的时候，网站页面的脚本可以读取这个信息，就自动帮你把用户名给填了，能够方便一下用户。这也是Cookie名称的由来，给用户的一点甜头。所以，总结一下：Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中；Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现Session的一种方式
