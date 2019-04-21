@@ -231,16 +231,3 @@ public class SingleTon {
     }
 }
 ```
-## 测试
-public class SingleTon {
-
-    private SingleTon(){}
-
-    public SingleTon single = new SingleTon();
-
-    public static void main(String[] args) {
-        //Exception in thread "main" java.lang.StackOverflowError
-        SingleTon single2 = new SingleTon();
-        System.out.println(single2);
-    }
-}
