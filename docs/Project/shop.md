@@ -55,6 +55,7 @@ Cookie cookie = new Cookie("TT_TOKEN", token);
        response.addCookie(cookie);
 ```
 浏览器会根据cookie的domain属性进行判断访问哪个域会携带这个cookie,因为com.taotao.portal属于taotao.com的子域,所以在这个浏览器上访问portal.taotao.com服务器下的所有路径都会携带这个cookie
+- [单点登录](https://blog.csdn.net/qq_22172133/article/details/82291112)
 
 ---
 ## 购物车
