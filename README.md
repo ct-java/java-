@@ -1,20 +1,39 @@
-# 包括
-- java学习笔记
-- Java面试题库
-- Java工具类
-***
-# 面试通关
-- [java基础面试通关](docs/Java面试通关/Java基础面试通关.md)
-- [IO流面试通关](docs/Java面试通关/面试通关[IO流].md)
-- [JVM面试通关](docs/Java面试通关/面试通关[JVM].md)
-- [线程面试通关](docs/Java面试通关/面试通关[线程].md)
-- [集合面试通关](docs/Java面试通关/面试通关[集合].md)
-- [MySQL面试通关](docs/Java面试通关/面试通过[MySQL].md)
-- [反射面试通关](docs/Java面试通关/面试通过[反射].md)
-- [网络编程面试通关](docs/Java面试通关/面试通过[网络编程].md)
-- [数据结构面试通关](docs/Java面试通关/面试通过[数据结构].md)
-- [工具类面试通关](docs/Java面试通关/面试通过[工具类].md)
-- [MySQL面试通关](docs/Java面试通关/面试通过[工具类].md)
-- [Servlet面试通关](docs/Java面试通关/面试通过[Servlet].md)
-# 工具
+[TOC]
+# DOC文档
+## Java基础
+- [Java基础](docs/Java基础/Java基础.md)
+- [IO流](docs/Java基础/IO流.md)
+- [线程](docs/Java基础/线程.md)
+- [集合](docs/Java基础/集合.md)
+- [JVM](docs/Java基础/JVM.md)
+- [Servlet](docs/Java基础/Servlet.md)
+- [反射](docs/Java基础/反射.md)
+- [工具类](docs/Java基础/工具类.md)
+- [网络编程](docs/Java基础/网络编程.md)
+
+## 数据库
+- [MySQL](docs/databases/MySQL.md)
+
+## 框架
+- [Spring](docs/框架/spring.md)
+- [SpringMVC](docs/框架/springmvc.md)
+- [Mybatis](docs/框架/Mybatis.md)
+
+## 数据结构和算法
+- [数据结构](docs/数据结构和算法/数据结构.md)
+
+## 工具
 - [java-utils](docs/tools/utils.md)
+
+## common
+- [common](docs/common/common.md)
+- [计算机系统](docs/common/计算机系统.md)
+- [计算机网络](docs/common/计算机网络.md)
+
+# 刷题
+- [牛课堂刷题1](docs/刷题/牛课堂笔试题.md)
+
+# Project
+- [common](docs/Project/common.md)
+- [oa](docs/Project/oa.md)
+- [shop](docs/Project/shop.md)
