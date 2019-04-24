@@ -34,10 +34,5 @@
 - [牛课堂刷题1](docs/刷题/牛课堂笔试题.md)
 
 # Project
-- [common](docs/Project/common.md)
 - [oa](docs/Project/oa.md)
 - [shop](docs/Project/shop.md)
-
-# 收藏夹
-## API
-[收藏夹](chrome://bookmarks/#15)
