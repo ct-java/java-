@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util
+  http://www.springframework.org/schema/util/spring-util.xsd
+  http://code.alibabatech.com/schema/dubbo
+  http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<!-- 配置包扫描 -->
+	<context:component-scan base-package="com.sso.service" />
+	<!-- 使用dubbo发布服务 -->
+	<!-- 提供方应用信息，用于计算机依赖关系 -->
+	<dubbo:application name="shop_sso_service_impl" />
+	<dubbo:registry address="192.168.18.130:2181" protocol="zookeeper" client="zkclient" />
+	<!-- 用dubbo协议在20880端口暴露服务，port的值可以自定义 -->
+	<dubbo:protocol name="dubbo" port="20880" />
+	<!-- ref的值必须是实现类首字母小写 -->
+	<dubbo:service interface="com.sso.service.LoginService" ref="loginServiceImpl" />
+	<dubbo:service interface="com.sso.service.RegisterService" ref="registerServiceImpl" />
+	<dubbo:service interface="com.sso.service.TokenService" ref="tokenServiceImpl" />
+</beans>

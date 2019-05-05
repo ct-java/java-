@@ -34,7 +34,7 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
 
 /**
- * 
+ *
  * @author H__D
  * @date 2016年10月19日 上午11:27:25
  *
@@ -53,7 +53,7 @@ public class HttpClientHelper {
 
     // HTTP内容类型。相当于form表单的形式，提交数据
     private static final String CONTENT_TYPE_JSON_URL = "application/json;charset=utf-8";
-    
+
 
     // 连接管理器
     private static PoolingHttpClientConnectionManager pool;
@@ -62,7 +62,7 @@ public class HttpClientHelper {
     private static RequestConfig requestConfig;
 
     static {
-        
+
         try {
             //System.out.println("初始化HttpClientTest~~~开始");
 			SSLContextBuilder builder = new SSLContextBuilder();
@@ -95,8 +95,7 @@ public class HttpClientHelper {
             e.printStackTrace();
         } catch (KeyManagementException e) {
             e.printStackTrace();
-        }
-        
+        }      
 
         // 设置请求超时时间
         requestConfig = RequestConfig.custom().setSocketTimeout(50000).setConnectTimeout(50000)
@@ -104,7 +103,7 @@ public class HttpClientHelper {
     }
 
     private static CloseableHttpClient getHttpClient() {
-        
+
         CloseableHttpClient httpClient = HttpClients.custom()
                 // 设置连接池管理
                 .setConnectionManager(pool)
@@ -113,13 +112,13 @@ public class HttpClientHelper {
                 // 设置重试次数
                 .setRetryHandler(new DefaultHttpRequestRetryHandler(0, false))
                 .build();
-        
+
         return httpClient;
     }
 
     /**
      * 发送Post请求
-     * 
+     *
      * @param httpPost
      * @return
      */
@@ -176,7 +175,7 @@ public class HttpClientHelper {
 
     /**
      * 发送Get请求
-     * 
+     *
      * @param httpGet
      * @return
      */
@@ -230,12 +229,12 @@ public class HttpClientHelper {
         }
         return responseContent;
     }
-    
-    
-    
+
+
+
     /**
      * 发送 post请求
-     * 
+     *
      * @param httpUrl
      *            地址
      */
@@ -247,7 +246,7 @@ public class HttpClientHelper {
 
     /**
      * 发送 get请求
-     * 
+     *
      * @param httpUrl
      */
     public static String sendHttpGet(String httpUrl) {
@@ -255,10 +254,10 @@ public class HttpClientHelper {
         HttpGet httpGet = new HttpGet(httpUrl);
         return sendHttpGet(httpGet);
     }
-    
+
     /**
      * 发送 get请求
-     * 
+     *
      * @param maps
      *            参数
      */
@@ -268,11 +267,11 @@ public class HttpClientHelper {
         return sendHttpGet(httpUrl+"?"+param);
     }
 
-    
+
 
     /**
      * 发送 post请求（带文件）
-     * 
+     *
      * @param httpUrl
      *            地址
      * @param maps
@@ -301,12 +300,12 @@ public class HttpClientHelper {
 
     /**
      * 发送 post请求
-     * 
+     *
      * @param httpUrl
      *            地址
      * @param params
      *            参数(格式:key1=value1&key2=value2)
-     * 
+     *
      */
     public static String sendHttpPost(String httpUrl, String params) {
         HttpPost httpPost = new HttpPost(httpUrl);// 创建httpPost
@@ -325,7 +324,7 @@ public class HttpClientHelper {
 
     /**
      * 发送 post请求
-     * 
+     *
      * @param maps
      *            参数
      */
@@ -334,17 +333,17 @@ public class HttpClientHelper {
         return sendHttpPost(httpUrl, parem);
     }
 
-    
-    
-    
+
+
+
     /**
      * 发送 post请求 发送json数据
-     * 
+     *
      * @param httpUrl
      *            地址
      * @param paramsJson
      *            参数(格式 json)
-     * 
+     *
      */
     public static String sendHttpPostJson(String httpUrl, String paramsJson) {
         HttpPost httpPost = new HttpPost(httpUrl);// 创建httpPost
@@ -360,13 +359,13 @@ public class HttpClientHelper {
         }
         return sendHttpPost(httpPost);
     }
-    
+
     /**
      * 发送 post请求 发送xml数据
-     * 
+     *
      * @param httpUrl   地址
      * @param paramsXml  参数(格式 Xml)
-     * 
+     *
      */
     public static String sendHttpPostXml(String httpUrl, String paramsXml) {
         HttpPost httpPost = new HttpPost(httpUrl);// 创建httpPost
@@ -382,11 +381,11 @@ public class HttpClientHelper {
         }
         return sendHttpPost(httpPost);
     }
-    
+
 
     /**
      * 将map集合的键值对转化成：key1=value1&key2=value2 的形式
-     * 
+     *
      * @param parameterMap
      *            需要转化的键值对集合
      * @return 字符串
@@ -415,12 +414,12 @@ public class HttpClientHelper {
     }
 
 //    public static void main(String[] args) throws Exception {
-//        
+//
 ////        System.out.println(sendHttpGet("http://www.baidu.com"));
 //    	Map<String,String> param = new HashMap<String, String>();
 //    	param.put("name", "1213131");
 //    	param.put("age", "18");
 //        System.out.println(sendHttpGet("http://127.0.0.1:8081/member/getMemberInfoByUserId",param));
-//    
+//
 //    }
 }

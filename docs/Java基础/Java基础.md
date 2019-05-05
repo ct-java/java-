@@ -30,7 +30,7 @@ System.out.println(t); // 0.20000005
 ```
 > 浮点数运算存在精度丢失问题，可以采用BigDecimal解决
 
-##
+## 自增
 ```java
 int i = 1;
 i = i++;  // i=1
@@ -45,6 +45,37 @@ System.out.println("k=" + k); // k=11
 ```java
 System.out.println(Math.round(12.5)); // 13
 System.out.println(Math.round(-12.5)); // -12
+```
+## 静态代码块
+- 示例1
+```java
+public class Demo {
+
+    private static int a = 500;
+
+    static {
+        a = 700;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Demo.a); // 700
+    }
+}
+```
+- 示例2
+```java
+public class Demo {
+
+    static {
+        a = 700;
+    }
+
+    private static int a = 500;
+
+    public static void main(String[] args) {
+        System.out.println(Demo.a); // 500
+    }
+}
 ```
 ## 数据类型
 - 基本数据类型 四类八种
