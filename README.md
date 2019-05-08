@@ -68,7 +68,8 @@
 -   [jedis客户端接口](work/utils/jedis/JedisClient.java)
 -   [jedis单系统客户端实现类](work/utils/jedis/JedisClientCluster.java)
 -   [jedis集群客户端实现类](work/utils/jedis/JedisClientPool.java)
--   [jiedis工具类](work\utils\jedis\JedisUtil.java)
+-   [jiedis工具类](work/utils/jedis/JedisUtil.java)
+-   [excel表格操作](work/utils/ExcelUtils.java)
 
 # tools
 
