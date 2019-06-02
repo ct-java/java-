@@ -313,3 +313,91 @@ public class SingleTon {
     }
 }
 ```
+
+## 接口修饰符
+
+-   接口修饰只能是public和abstract或者省略（不要）
+
+## List&lt;Map&lt;String,Object>>排序问题
+
+```java
+package com.test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class Test {
+	public static void main(String[] args) {
+		List<Map<String, Object>> maps = new ArrayList<>();
+		Map<String, Object> map1 = new HashMap<>();
+		map1.put("name", "cda");
+		map1.put("date", new Date(945324635635L));
+		map1.put("age", 64);
+		Map<String, Object> map2 = new HashMap<>();
+		map2.put("name", "fda");
+		map2.put("date", new Date(454651146595L));
+		map2.put("age", 23);
+		Map<String, Object> map3 = new HashMap<>();
+		map3.put("name", "adt");
+		map3.put("date", new Date(567566477346L));
+		map3.put("age", 82);
+		Map<String, Object> map4 = new HashMap<>();
+		map4.put("name", "abt");
+		map4.put("date", new Date(57566477346L));
+		map4.put("age", 12);
+		maps.add(map1);
+		maps.add(map2);
+		maps.add(map3);
+		maps.add(map4);
+		System.out.println("排序前......................");
+		for (Map<String, Object> map : maps) {
+			Set<Entry<String, Object>> entrySet = map.entrySet();
+			for (Entry<String, Object> map0 : entrySet) {
+				System.out.print(map0.getKey() + ":" + map0.getValue() + "  ");
+			}
+			System.out.println();
+		}
+
+		// 按照字符串进行排序（name）
+		Collections.sort(maps, new Comparator<Map<String, Object>>() {
+			@Override
+			public int compare(Map<String, Object> o1, Map<String, Object> o2) {
+				return o1.get("name").toString().compareTo(o2.get("name").toString());
+			}
+		});
+
+		// 按照日期进行排序（date）
+		Collections.sort(maps, new Comparator<Map<String, Object>>() {
+			@Override
+			public int compare(Map<String, Object> o1, Map<String, Object> o2) {
+				return ((Date) o1.get("date")).getTime() - ((Date) o2.get("date")).getTime() > 0 ? 1 : -1;
+			}
+		});
+
+		// 按照int进行排序（age）
+		Collections.sort(maps, new Comparator<Map<String, Object>>() {
+			@Override
+			public int compare(Map<String, Object> o1, Map<String, Object> o2) {
+				return Integer.parseInt(o1.get("age").toString()) - Integer.parseInt(o2.get("age").toString()) > 0 ? 1
+						: -1;
+			}
+		});
+
+		System.out.println("排序后......................");
+		for (Map<String, Object> map : maps) {
+			Set<Entry<String, Object>> entrySet = map.entrySet();
+			for (Entry<String, Object> map0 : entrySet) {
+				System.out.print(map0.getKey() + ":" + map0.getValue() + "   ");
+			}
+			System.out.println();
+		}
+	}
+}
+```
