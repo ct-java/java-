@@ -1,7 +1,5 @@
 ## 查看域名ip
-
--   nslookup + 域名
-
+- nslookup + 域名
 ## DNS
 
 ### 公共DNS排行榜
