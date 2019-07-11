@@ -1,4 +1,8 @@
 # 快捷键图示
+- Alt+按住右键移动
+![](assets/markdown-img-paste-20190709110424584.png)
+- Alt+up/down
+![](assets/markdown-img-paste-20190709105711750.png)
 - Alt+Shift+C
 ![](assets/markdown-img-paste-20190709105101141.png)
 - Ctrl+空格
@@ -7,21 +11,18 @@
 ![](assets/markdown-img-paste-20190709105803989.png)
 - Ctrl+shift+enter
 ![](assets/markdown-img-paste-20190709105353556.png)
-- Alt+up/down
-![](assets/markdown-img-paste-20190709105711750.png)
+- Ctrl+shift+w
+![](assets/markdown-img-paste-20190710085158598.png)
 - Ctrl+shift+i
 ![](assets/markdown-img-paste-20190709110118417.png)
-- 右键点击tag
-![](assets/markdown-img-paste-20190709110006664.png)
-- File/Open
-![](assets/markdown-img-paste-20190709110229479.png)
-- Alt+按住右键移动
-![](assets/markdown-img-paste-20190709110424584.png)
 - 选中元素/点击Diagrams
 ![](assets/markdown-img-paste-20190709164749723.png)
 - Ctrl+Alt+H
 ![](assets/markdown-img-paste-20190709165354101.png)
-***
+- 右键点击tag
+![](assets/markdown-img-paste-20190709110006664.png)
+- File/Open
+![](assets/markdown-img-paste-20190709110229479.png)
 - maven依赖图谱
 ![](assets/markdown-img-paste-20190709165850282.png)
 # --------------编辑快捷键-------------
