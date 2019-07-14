@@ -191,7 +191,7 @@ axios.defaults.withCredentials=true; // 让ajax携带cookie
 - 根域下一层就是顶级域，英语：Top-level domains，first-level domains（TLDs），也翻译为国际顶级域名,也就是一级域名
 - 它保存于DNS根域的名字空间中
 - 顶级域名是域名的最后一个部分，即是域名最后一点之后的字母，比如 .com .org .cn
-![域名](https://img-blog.csdn.net/20180516164407281)
+
 #### 顶级域名分为四类
 1. 通用顶级域（英语：Generic top-level domain，缩写为gTLD），如".com"、".net"、".org"、".edu"、".info"等，均由国外公司负责管理
 2. 国家及地区顶级域（英语：Country code top-level domain，缩写为ccTLD），如".cn"代表中国，".uk"代表英国等，地理顶级域名一般由各个国家或地区
@@ -199,6 +199,7 @@ axios.defaults.withCredentials=true; // 让ajax携带cookie
 4. 测试顶级域
 > N级域名就是在N-1级域名前追加一级
 比如二级域名是在一级域名前加一级，二级域名示例：baidu.com zhihu.com qq.com
+
 
 ### 二级域名
 - 一级域名下一层就是二级域名
