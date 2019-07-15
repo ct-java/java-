@@ -38,6 +38,9 @@ svg预览
 ## `git-log`
 图形化git提交记录
 
+## `git-plus`
+提供了各种git命令
+
 ## `pretty-json`
 格式化json数据
 
