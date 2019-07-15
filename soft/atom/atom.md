@@ -1,3 +1,4 @@
+[toc]
 # atom快捷键设置
 Atom编辑器支持自定义按键绑定,文件格式是CSON;
 ## 按键绑定组成
@@ -23,3 +24,8 @@ Atom编辑器支持自定义按键绑定,文件格式是CSON;
 '.platform-darwin atom-workspace atom-text-editor:not(.mini)' :
   'shift-cmd-C' :'unset!'
 ```
+# atom快捷键
+## `常用快捷键`
+- `ctrl-p` 文件搜索
+- `ctrl-shift-p` 命令搜索
+- [atom快捷键](https://www.jianshu.com/p/b8392151c0cd)

@@ -1,16 +1,12 @@
 [toc]
-# atom快捷键
-## `常用快捷键`
-- `ctrl-p` 文件搜索
-- `ctrl-shift-p` 命令搜索
-## 快捷键
-[atom快捷键](https://www.jianshu.com/p/b8392151c0cd)
-
 # atom插件
 ![](assets/markdown-img-paste-20190711021748128.png)
 ***
 ## `emment`
 html补全
+
+## `Atom HTML Preview`
+html页面预览
 
 ## `docblockr jsdoc`
 给js添加注释。
@@ -26,9 +22,6 @@ chrome里面的编辑框直接在atom编辑
 
 ## `atom-beautify`
 格式化代码，更统一的代码风格
-
-## `platformio-ide-terminal`
-又是一个很棒的terminal
 
 ## `svg-preview`
 svg预览
@@ -49,6 +42,9 @@ svg预览
 
 ## `command-toolbar`
 个性化atom的各个按钮命令
+
+## `platformio-ide-terminal`
+又是一个很棒的terminal
 ***
 
 ## `atom-material-ui`
